@@ -2,8 +2,8 @@
 //  Volunteer_AppUITests.swift
 //  Volunteer AppUITests
 //
-//  Created by Arpit Jasapara on 8/30/17.
-//  Copyright © 2017 Arpit Jasapara. All rights reserved.
+//  Created by Ed Basurto on 9/2/17.
+//  Copyright © 2017 Ed Basurto. All rights reserved.
 //
 
 import XCTest
