@@ -14,6 +14,8 @@ class HomePage: UIViewController {
     }
     
     @IBAction func signOut() {
-        
+        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "Log In")
+        self.present(vc, animated: true, completion: nil)
     }
 }

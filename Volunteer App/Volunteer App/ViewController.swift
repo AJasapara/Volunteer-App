@@ -37,6 +37,7 @@ class ViewController: UIViewController {
             let savedPassword = users.value(forKey: "password") as! String
             
             if usernameField.text == savedUsername && passwordField.text == savedPassword {
+                logLabel.text = ""
                 UserDefaults.standard.set(true, forKey: "isLoggedIn")
                 let vc = self.storyboard!.instantiateViewController(withIdentifier: "Home")
                 self.present(vc, animated: true, completion: nil)

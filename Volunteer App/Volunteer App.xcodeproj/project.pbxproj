@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CF2DAE081F5E3F9300E85F55 /* SignUpProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DAE071F5E3F9300E85F55 /* SignUpProcess.swift */; };
+		CFABBDA71F5E83A5009B2B9C /* EasyCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF80281C1F5C959D00DF311B /* EasyCoreData.framework */; };
+		CFABBDA81F5E83A5009B2B9C /* EasyCoreData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF80281C1F5C959D00DF311B /* EasyCoreData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CFABBDAC1F5E880A009B2B9C /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFABBDAB1F5E880A009B2B9C /* AccountView.swift */; };
 		CFDDD66F1F5B6BE40074B8AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDD66E1F5B6BE40074B8AB /* AppDelegate.swift */; };
 		CFDDD6711F5B6BE40074B8AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDD6701F5B6BE40074B8AB /* ViewController.swift */; };
 		CFDDD6741F5B6BE40074B8AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDDD6721F5B6BE40074B8AB /* Main.storyboard */; };
@@ -28,6 +31,13 @@
 			containerPortal = CF8028171F5C959D00DF311B /* EasyCoreData.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 01B32A091EC443E2008664C5;
+			remoteInfo = EasyCoreData;
+		};
+		CFABBDA91F5E83A5009B2B9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF8028171F5C959D00DF311B /* EasyCoreData.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 01B32A081EC443E2008664C5;
 			remoteInfo = EasyCoreData;
 		};
 		CFDDD6801F5B6BE40074B8AB /* PBXContainerItemProxy */ = {
@@ -53,6 +63,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CFABBDA81F5E83A5009B2B9C /* EasyCoreData.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,6 +73,7 @@
 /* Begin PBXFileReference section */
 		CF2DAE071F5E3F9300E85F55 /* SignUpProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpProcess.swift; sourceTree = "<group>"; };
 		CF8028171F5C959D00DF311B /* EasyCoreData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EasyCoreData.xcodeproj; path = "../../../../../Downloads/SwiftyCoreData-master/EasyCoreData.xcodeproj"; sourceTree = "<group>"; };
+		CFABBDAB1F5E880A009B2B9C /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		CFDDD66B1F5B6BE40074B8AB /* Volunteer App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Volunteer App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDDD66E1F5B6BE40074B8AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFDDD6701F5B6BE40074B8AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFABBDA71F5E83A5009B2B9C /* EasyCoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +155,7 @@
 				CFDDD66E1F5B6BE40074B8AB /* AppDelegate.swift */,
 				CFDDD6701F5B6BE40074B8AB /* ViewController.swift */,
 				CFDDD6721F5B6BE40074B8AB /* Main.storyboard */,
+				CFABBDAB1F5E880A009B2B9C /* AccountView.swift */,
 				CF2DAE071F5E3F9300E85F55 /* SignUpProcess.swift */,
 				CFDDD6B21F5BBF7F0074B8AB /* InitialVC.swift */,
 				CFDDD69C1F5B72810074B8AB /* Volunteer.swift */,
@@ -188,6 +202,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CFABBDAA1F5E83A5009B2B9C /* PBXTargetDependency */,
 			);
 			name = "Volunteer App";
 			productName = "Volunteer App";
@@ -331,6 +346,7 @@
 				CF2DAE081F5E3F9300E85F55 /* SignUpProcess.swift in Sources */,
 				CFDDD6711F5B6BE40074B8AB /* ViewController.swift in Sources */,
 				CFDDD6B31F5BBF7F0074B8AB /* InitialVC.swift in Sources */,
+				CFABBDAC1F5E880A009B2B9C /* AccountView.swift in Sources */,
 				CFDDD66F1F5B6BE40074B8AB /* AppDelegate.swift in Sources */,
 				CFDDD69D1F5B72810074B8AB /* Volunteer.swift in Sources */,
 			);
@@ -355,6 +371,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CFABBDAA1F5E83A5009B2B9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EasyCoreData;
+			targetProxy = CFABBDA91F5E83A5009B2B9C /* PBXContainerItemProxy */;
+		};
 		CFDDD6811F5B6BE40074B8AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CFDDD66A1F5B6BE40074B8AB /* Volunteer App */;

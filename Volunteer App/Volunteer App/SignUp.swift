@@ -57,15 +57,6 @@ class SignUp: UIViewController {
     
     func isValid() -> Bool {
         var valid = true
-        for users in dataOfUsers {
-            let savedUser = users.value(forKey: "username") as! String
-            
-            if userName.text == savedUser {
-                signUpLabel.text = "Username already exists!"
-                valid = false
-                break
-            }
-        }
         if !(email.text?.range(of: "@") != nil && (email.text?.range(of: ".com") != nil || email.text?.range(of: ".org") != nil)) {
             emailLabel.text = "Please enter proper email address!"
             valid = false
@@ -82,8 +73,9 @@ class SignUp: UIViewController {
         if dOB.text == nil {
             dOBLabel.text = "Please enter a date of birth!"
             valid = false
-        }
+        } else { dOBLabel.text = "" }
         if gender.text?.lowercased() == "male" || gender.text?.lowercased() == "female" {
+            genderLabel.text = ""
             valid = true
         } else {
             genderLabel.text = "Please enter Male or Female"
@@ -92,14 +84,23 @@ class SignUp: UIViewController {
         if city.text == nil {
             cityLabel.text = "Please enter a City name!"
             valid = false
-        }
+        } else { cityLabel.text = "" }
         if state.text == nil {
             stateLabel.text = "Please enter a State name!"
             valid = false
-        }
+        } else { stateLabel.text = "" }
         if !(email.text?.range(of: "@") != nil && (email.text?.range(of: ".com") != nil || email.text?.range(of: ".org") != nil)) {
             emailLabel.text = "Please enter proper email address!"
             valid = false
+        } else { emailLabel.text = "" }
+        for users in dataOfUsers {
+            let savedUser = users.value(forKey: "username") as! String
+            
+            if userName.text == savedUser {
+                signUpLabel.text = "Username already exists!"
+                valid = false
+                break
+            } else { signUpLabel.text = "" }
         }
         return valid
     }
