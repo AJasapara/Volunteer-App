@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0830"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B7FF1D61F5771F200A1B0C4"
+               BlueprintIdentifier = "CFDDD66A1F5B6BE40074B8AB"
                BuildableName = "Volunteer App.app"
                BlueprintName = "Volunteer App"
                ReferencedContainer = "container:Volunteer App.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B7FF1ED1F5771F300A1B0C4"
+               BlueprintIdentifier = "CFDDD67E1F5B6BE40074B8AB"
                BuildableName = "Volunteer AppTests.xctest"
                BlueprintName = "Volunteer AppTests"
                ReferencedContainer = "container:Volunteer App.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B7FF1F81F5771F300A1B0C4"
+               BlueprintIdentifier = "CFDDD6891F5B6BE40074B8AB"
                BuildableName = "Volunteer AppUITests.xctest"
                BlueprintName = "Volunteer AppUITests"
                ReferencedContainer = "container:Volunteer App.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B7FF1D61F5771F200A1B0C4"
+            BlueprintIdentifier = "CFDDD66A1F5B6BE40074B8AB"
             BuildableName = "Volunteer App.app"
             BlueprintName = "Volunteer App"
             ReferencedContainer = "container:Volunteer App.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B7FF1D61F5771F200A1B0C4"
+            BlueprintIdentifier = "CFDDD66A1F5B6BE40074B8AB"
             BuildableName = "Volunteer App.app"
             BlueprintName = "Volunteer App"
             ReferencedContainer = "container:Volunteer App.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B7FF1D61F5771F200A1B0C4"
+            BlueprintIdentifier = "CFDDD66A1F5B6BE40074B8AB"
             BuildableName = "Volunteer App.app"
             BlueprintName = "Volunteer App"
             ReferencedContainer = "container:Volunteer App.xcodeproj">
