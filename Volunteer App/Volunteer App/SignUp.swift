@@ -16,11 +16,24 @@ class SignUp: UIViewController {
 
     @IBOutlet var userName: UITextField!
     @IBOutlet var passWord: UITextField!
+    @IBOutlet var email: UITextField!
+    @IBOutlet var firstName: UITextField!
+    @IBOutlet var lastName: UITextField!
+    @IBOutlet var dOB: UITextField!
+    @IBOutlet var gender: UITextField!
+    @IBOutlet var city: UITextField!
+    @IBOutlet var state: UITextField!
     
     @IBOutlet var spinner: UIActivityIndicatorView!
     
     @IBOutlet var signUpLabel: UILabel!
-    
+    @IBOutlet var emailLabel: UILabel!
+    @IBOutlet var fNLabel: UILabel!
+    @IBOutlet var lNLabel: UILabel!
+    @IBOutlet var dOBLabel: UILabel!
+    @IBOutlet var genderLabel: UILabel!
+    @IBOutlet var cityLabel: UILabel!
+    @IBOutlet var stateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +43,19 @@ class SignUp: UIViewController {
     
     @IBAction func enterData() {
         spinner.startAnimating()
+        if isValid() {
+            saveData(userData: userName.text!, passData: passWord.text!, emailIn: email.text!, firstNameIn: firstName.text!, lastNameIn: lastName.text!, dOBIn: dOB.text!, genderIn: gender.text!, cityIn: city.text!, stateIn: state.text!)
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "Log In")
+            self.present(vc, animated: true, completion: nil)
+        }
+        spinner.stopAnimating()
+    }
+    
+    func saveData(userData: String, passData: String, emailIn: String, firstNameIn: String, lastNameIn: String, dOBIn: String, genderIn: String, cityIn: String, stateIn: String) {
+        module.push(values: [userData, passData, emailIn, firstNameIn, lastNameIn, dOBIn, genderIn, cityIn, stateIn], keys: ["username", "password", "email", "firstName", "lastName", "dOB", "gender", "city", "state"])
+    }
+    
+    func isValid() -> Bool {
         var valid = true
         for users in dataOfUsers {
             let savedUser = users.value(forKey: "username") as! String
@@ -40,16 +66,42 @@ class SignUp: UIViewController {
                 break
             }
         }
-        if valid {
-            saveData(userData: userName.text!, passData: passWord.text!)
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: "Log In")
-            self.present(vc, animated: true, completion: nil)
+        if !(email.text?.range(of: "@") != nil && (email.text?.range(of: ".com") != nil || email.text?.range(of: ".org") != nil)) {
+            emailLabel.text = "Please enter proper email address!"
+            valid = false
         }
-        spinner.stopAnimating()
-    }
-    
-    func saveData(userData: String, passData: String) {
-        module.push(values: [userData, passData], keys: ["username", "password"])
+        if firstName.text == nil {
+            fNLabel.text = "Please enter a name!"
+            valid = false
+        }
+        if lastName.text == nil {
+            lNLabel.text = "Please enter a name!"
+            valid = false
+        }
+        //For date of birth, need to have it check if age is valid (18+)
+        if dOB.text == nil {
+            dOBLabel.text = "Please enter a date of birth!"
+            valid = false
+        }
+        if gender.text?.lowercased() == "male" || gender.text?.lowercased() == "female" {
+            valid = true
+        } else {
+            genderLabel.text = "Please enter Male or Female"
+            valid = false
+        }
+        if city.text == nil {
+            cityLabel.text = "Please enter a City name!"
+            valid = false
+        }
+        if state.text == nil {
+            stateLabel.text = "Please enter a State name!"
+            valid = false
+        }
+        if !(email.text?.range(of: "@") != nil && (email.text?.range(of: ".com") != nil || email.text?.range(of: ".org") != nil)) {
+            emailLabel.text = "Please enter proper email address!"
+            valid = false
+        }
+        return valid
     }
 }
 

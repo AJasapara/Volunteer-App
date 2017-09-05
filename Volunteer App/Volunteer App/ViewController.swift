@@ -40,9 +40,7 @@ class ViewController: UIViewController {
                 UserDefaults.standard.set(true, forKey: "isLoggedIn")
                 let vc = self.storyboard!.instantiateViewController(withIdentifier: "Home")
                 self.present(vc, animated: true, completion: nil)
-            }
-            else
-            {
+            } else {
                 logLabel.text = "Incorrect username and password combination!"
             }
         }
