@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BEDCCFB1F60B0860097D4DE /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDCCFA1F60B0860097D4DE /* CreateEvent.swift */; };
 		CF2DAE081F5E3F9300E85F55 /* SignUpProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DAE071F5E3F9300E85F55 /* SignUpProcess.swift */; };
 		CFABBDA71F5E83A5009B2B9C /* EasyCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF80281C1F5C959D00DF311B /* EasyCoreData.framework */; };
 		CFABBDA81F5E83A5009B2B9C /* EasyCoreData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF80281C1F5C959D00DF311B /* EasyCoreData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -71,6 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2BEDCCFA1F60B0860097D4DE /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
 		CF2DAE071F5E3F9300E85F55 /* SignUpProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpProcess.swift; sourceTree = "<group>"; };
 		CF8028171F5C959D00DF311B /* EasyCoreData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EasyCoreData.xcodeproj; path = "../../../../../Downloads/SwiftyCoreData-master/EasyCoreData.xcodeproj"; sourceTree = "<group>"; };
 		CFABBDAB1F5E880A009B2B9C /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				CFDDD6701F5B6BE40074B8AB /* ViewController.swift */,
 				CFDDD6721F5B6BE40074B8AB /* Main.storyboard */,
 				CFABBDAB1F5E880A009B2B9C /* AccountView.swift */,
+				2BEDCCFA1F60B0860097D4DE /* CreateEvent.swift */,
 				CF2DAE071F5E3F9300E85F55 /* SignUpProcess.swift */,
 				CFDDD6B21F5BBF7F0074B8AB /* InitialVC.swift */,
 				CFDDD69C1F5B72810074B8AB /* Volunteer.swift */,
@@ -342,6 +345,7 @@
 			files = (
 				CFDDD6AF1F5B82DE0074B8AB /* SignUp.swift in Sources */,
 				CFDDD6B11F5BBC660074B8AB /* HomePage.swift in Sources */,
+				2BEDCCFB1F60B0860097D4DE /* CreateEvent.swift in Sources */,
 				CFDDD6AB1F5B76C20074B8AB /* Users.xcdatamodeld in Sources */,
 				CF2DAE081F5E3F9300E85F55 /* SignUpProcess.swift in Sources */,
 				CFDDD6711F5B6BE40074B8AB /* ViewController.swift in Sources */,
