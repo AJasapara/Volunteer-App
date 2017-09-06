@@ -39,7 +39,7 @@ class CreateEvent:  UIViewController, UIImagePickerControllerDelegate, UINavigat
     @IBAction func pickPhoto(_ sender: UITapGestureRecognizer) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = f
+        imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }
     
