@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Volunteer App
 //
-//  Created by Ed Basurto on 9/2/17.
+//  Created by Cyril Garcia on 9/2/17.
 //  Copyright © 2017 Ed Basurto. All rights reserved.
 //
 
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         usersData = module.retrieveData()
         spinner.hidesWhenStopped = true
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
     
     @IBAction func login() {

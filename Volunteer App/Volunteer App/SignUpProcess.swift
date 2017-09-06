@@ -20,9 +20,4 @@ class SignUpProcess: UIViewController {
         super.viewDidLoad()
     }
     
-    
-    
-    
-    
-    
 }

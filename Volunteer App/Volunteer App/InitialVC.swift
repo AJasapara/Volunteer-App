@@ -16,8 +16,8 @@ class InitialVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        checkIfLoggedIn()    }
+        checkIfLoggedIn()
+    }
     
     func checkIfLoggedIn() {
         let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")

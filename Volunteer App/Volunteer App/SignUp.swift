@@ -61,16 +61,16 @@ class SignUp: UIViewController {
             emailLabel.text = "Please enter proper email address!"
             valid = false
         }
-        if firstName.text == nil {
+        if firstName.text == "" {
             fNLabel.text = "Please enter a name!"
             valid = false
         }
-        if lastName.text == nil {
+        if lastName.text == "" {
             lNLabel.text = "Please enter a name!"
             valid = false
         }
         //For date of birth, need to have it check if age is valid (18+)
-        if dOB.text == nil {
+        if dOB.text == "" {
             dOBLabel.text = "Please enter a date of birth!"
             valid = false
         } else { dOBLabel.text = "" }
@@ -81,11 +81,11 @@ class SignUp: UIViewController {
             genderLabel.text = "Please enter Male or Female"
             valid = false
         }
-        if city.text == nil {
+        if city.text == "" {
             cityLabel.text = "Please enter a City name!"
             valid = false
         } else { cityLabel.text = "" }
-        if state.text == nil {
+        if state.text == "" {
             stateLabel.text = "Please enter a State name!"
             valid = false
         } else { stateLabel.text = "" }
