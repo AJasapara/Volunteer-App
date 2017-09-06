@@ -347,22 +347,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAM-0N-22t">
+                                <rect key="frame" x="0.0" y="540" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Create Event"/>
+                                <connections>
+                                    <segue destination="FIF-9E-CEn" kind="show" id="ipN-Ae-dtL"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpQ-0x-fdS">
-                                <rect key="frame" x="141" y="617" width="94" height="30"/>
+                                <rect key="frame" x="140" y="617" width="94" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Out">
                                     <color key="titleColor" red="1" green="0.0" blue="0.020532956710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="signOut" destination="3Yt-pR-xkB" eventType="touchUpInside" id="Laf-9H-ahQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAM-0N-22t">
-                                <rect key="frame" x="0.0" y="540" width="375" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Create Event"/>
-                                <connections>
-                                    <segue destination="FIF-9E-CEn" kind="show" id="trB-IV-jPz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -413,6 +414,42 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQq-Ko-jh1">
+                                <rect key="frame" x="72" y="60" width="230" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tap" translatesAutoresizingMaskIntoConstraints="NO" id="1sF-Fp-Ljz">
+                                <rect key="frame" x="43" y="409" width="288" height="202"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6lk-ns-csL" appends="YES" id="mW8-3V-pph"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6q-Gf-3RH">
+                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Create Event"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Pictures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUK-MV-j0E">
+                                <rect key="frame" x="43" y="380" width="118" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ5-ZR-Mf9">
+                                <rect key="frame" x="16" y="20" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="3Yt-pR-xkB" kind="show" id="SuU-o7-vZa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.89459365173942684" blue="0.67770888067009172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -420,12 +457,18 @@
                         <outlet property="Description" destination="bWh-2l-TU8" id="b6e-a3-UgP"/>
                         <outlet property="EventTitle" destination="cdr-D2-6AA" id="lrZ-4Q-ZzZ"/>
                         <outlet property="NumVolunteers" destination="Fuq-JT-kDo" id="o4H-UX-H6c"/>
+                        <outlet property="Photo" destination="1sF-Fp-Ljz" id="Z8P-kC-RrW"/>
                         <outlet property="ZipCode" destination="GSd-OQ-0S3" id="vth-cy-FsJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKe-su-qFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6lk-ns-csL">
+                    <connections>
+                        <action selector="pickPhoto:" destination="FIF-9E-CEn" id="Dh7-Qw-Zml"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1916" y="-564.46776611694156"/>
+            <point key="canvasLocation" x="1876" y="-566.26686656671666"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="G1V-FV-CaM">
@@ -464,4 +507,7 @@
             <point key="canvasLocation" x="-802" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Tap" width="256" height="256"/>
+    </resources>
 </document>

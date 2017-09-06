@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2BEDCCFB1F60B0860097D4DE /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEDCCFA1F60B0860097D4DE /* CreateEvent.swift */; };
+		2BEDCD021F60B8180097D4DE /* EasyCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEDCD011F60B8080097D4DE /* EasyCoreData.framework */; };
+		2BEDCD031F60B8180097D4DE /* EasyCoreData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEDCD011F60B8080097D4DE /* EasyCoreData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF2DAE081F5E3F9300E85F55 /* SignUpProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DAE071F5E3F9300E85F55 /* SignUpProcess.swift */; };
-		CFABBDA71F5E83A5009B2B9C /* EasyCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF80281C1F5C959D00DF311B /* EasyCoreData.framework */; };
-		CFABBDA81F5E83A5009B2B9C /* EasyCoreData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF80281C1F5C959D00DF311B /* EasyCoreData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CFABBDAC1F5E880A009B2B9C /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFABBDAB1F5E880A009B2B9C /* AccountView.swift */; };
 		CFDDD66F1F5B6BE40074B8AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDD66E1F5B6BE40074B8AB /* AppDelegate.swift */; };
 		CFDDD6711F5B6BE40074B8AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDD6701F5B6BE40074B8AB /* ViewController.swift */; };
@@ -27,16 +27,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CF80281B1F5C959D00DF311B /* PBXContainerItemProxy */ = {
+		2BEDCD001F60B8080097D4DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CF8028171F5C959D00DF311B /* EasyCoreData.xcodeproj */;
+			containerPortal = 2BEDCCFC1F60B8070097D4DE /* EasyCoreData.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 01B32A091EC443E2008664C5;
 			remoteInfo = EasyCoreData;
 		};
-		CFABBDA91F5E83A5009B2B9C /* PBXContainerItemProxy */ = {
+		2BEDCD041F60B8180097D4DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CF8028171F5C959D00DF311B /* EasyCoreData.xcodeproj */;
+			containerPortal = 2BEDCCFC1F60B8070097D4DE /* EasyCoreData.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 01B32A081EC443E2008664C5;
 			remoteInfo = EasyCoreData;
@@ -64,7 +64,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CFABBDA81F5E83A5009B2B9C /* EasyCoreData.framework in Embed Frameworks */,
+				2BEDCD031F60B8180097D4DE /* EasyCoreData.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,8 +73,8 @@
 
 /* Begin PBXFileReference section */
 		2BEDCCFA1F60B0860097D4DE /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
+		2BEDCCFC1F60B8070097D4DE /* EasyCoreData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EasyCoreData.xcodeproj; path = "../../../Downloads/SwiftyCoreData-master/EasyCoreData.xcodeproj"; sourceTree = "<group>"; };
 		CF2DAE071F5E3F9300E85F55 /* SignUpProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpProcess.swift; sourceTree = "<group>"; };
-		CF8028171F5C959D00DF311B /* EasyCoreData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EasyCoreData.xcodeproj; path = "../../../../../Downloads/SwiftyCoreData-master/EasyCoreData.xcodeproj"; sourceTree = "<group>"; };
 		CFABBDAB1F5E880A009B2B9C /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		CFDDD66B1F5B6BE40074B8AB /* Volunteer App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Volunteer App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDDD66E1F5B6BE40074B8AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFABBDA71F5E83A5009B2B9C /* EasyCoreData.framework in Frameworks */,
+				2BEDCD021F60B8180097D4DE /* EasyCoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,10 +122,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CF8028181F5C959D00DF311B /* Products */ = {
+		2BEDCCFD1F60B8070097D4DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CF80281C1F5C959D00DF311B /* EasyCoreData.framework */,
+				2BEDCD011F60B8080097D4DE /* EasyCoreData.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,9 +153,9 @@
 		CFDDD66D1F5B6BE40074B8AB /* Volunteer App */ = {
 			isa = PBXGroup;
 			children = (
-				CF8028171F5C959D00DF311B /* EasyCoreData.xcodeproj */,
 				CFDDD66E1F5B6BE40074B8AB /* AppDelegate.swift */,
 				CFDDD6701F5B6BE40074B8AB /* ViewController.swift */,
+				2BEDCCFC1F60B8070097D4DE /* EasyCoreData.xcodeproj */,
 				CFDDD6721F5B6BE40074B8AB /* Main.storyboard */,
 				CFABBDAB1F5E880A009B2B9C /* AccountView.swift */,
 				2BEDCCFA1F60B0860097D4DE /* CreateEvent.swift */,
@@ -205,7 +205,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CFABBDAA1F5E83A5009B2B9C /* PBXTargetDependency */,
+				2BEDCD051F60B8180097D4DE /* PBXTargetDependency */,
 			);
 			name = "Volunteer App";
 			productName = "Volunteer App";
@@ -288,8 +288,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = CF8028181F5C959D00DF311B /* Products */;
-					ProjectRef = CF8028171F5C959D00DF311B /* EasyCoreData.xcodeproj */;
+					ProductGroup = 2BEDCCFD1F60B8070097D4DE /* Products */;
+					ProjectRef = 2BEDCCFC1F60B8070097D4DE /* EasyCoreData.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -302,11 +302,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		CF80281C1F5C959D00DF311B /* EasyCoreData.framework */ = {
+		2BEDCD011F60B8080097D4DE /* EasyCoreData.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = EasyCoreData.framework;
-			remoteRef = CF80281B1F5C959D00DF311B /* PBXContainerItemProxy */;
+			remoteRef = 2BEDCD001F60B8080097D4DE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -375,10 +375,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CFABBDAA1F5E83A5009B2B9C /* PBXTargetDependency */ = {
+		2BEDCD051F60B8180097D4DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EasyCoreData;
-			targetProxy = CFABBDA91F5E83A5009B2B9C /* PBXContainerItemProxy */;
+			targetProxy = 2BEDCD041F60B8180097D4DE /* PBXContainerItemProxy */;
 		};
 		CFDDD6811F5B6BE40074B8AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
