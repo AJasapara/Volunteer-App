@@ -7,15 +7,14 @@
 //
 
 import UIKit
-import CoreData
-import EasyCoreData
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class SignUp: UIViewController {
-    var module = CoreDataModule(entityName: "Entity", xcDataModelID: "Users")
-    var dataOfUsers = [NSManagedObject]()
-
-    @IBOutlet var userName: UITextField!
-    @IBOutlet var passWord: UITextField!
+    @IBOutlet var username: UITextField!
+    @IBOutlet var password: UITextField!
+    @IBOutlet var confirmPassword: UITextField!
     @IBOutlet var email: UITextField!
     @IBOutlet var firstName: UITextField!
     @IBOutlet var lastName: UITextField!
@@ -27,6 +26,7 @@ class SignUp: UIViewController {
     @IBOutlet var spinner: UIActivityIndicatorView!
     
     @IBOutlet var signUpLabel: UILabel!
+    @IBOutlet var passwordLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var fNLabel: UILabel!
     @IBOutlet var lNLabel: UILabel!
@@ -35,75 +35,93 @@ class SignUp: UIViewController {
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet var stateLabel: UILabel!
     
+    
+    
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataOfUsers = module.retrieveData()
+        ref = Database.database().reference()
+        self.ref.child("Users").child("ed@basurto.org").setValue(["email": "edbasurto", "password": "password"])
         spinner.hidesWhenStopped = true
     }
     
-    @IBAction func enterData() {
-        spinner.startAnimating()
-        if isValid() {
-            saveData(userData: userName.text!, passData: passWord.text!, emailIn: email.text!, firstNameIn: firstName.text!, lastNameIn: lastName.text!, dOBIn: dOB.text!, genderIn: gender.text!, cityIn: city.text!, stateIn: state.text!)
+    func createUser () {
+        Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
+            let userid = user?.uid
+            let errorMsg = error!.localizedDescription
+            if(errorMsg == "") {
+                let values = ["email": self.email.text!, "password": self.password.text!]
+                self.saveUserInfo(values: values, uid: userid!)
+                self.ref.child("User Profile").child(userid!).setValue([
+                    "username": self.username.text!,
+                    "name": self.firstName.text! + self.lastName.text!,
+                    "dOB": self.dOB.text!,
+                    "location": self.city.text! + self.state.text!
+                    ])
+            }
+        }
+    }
+    
+    func saveUserInfo (values: [String: String], uid: String) {
+        ref.child("Users").child(uid).setValue(values) { (error, ref) in
+            if(error != nil) {
+                let ac = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                ac.addAction(cancel)
+                self.present(ac, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    @IBAction func continueSignUp() {
+        //let userID = Auth.auth().currentUser?.uid
+        let str: String! = self.restorationIdentifier
+        //var error = false
+        switch str {
+        case "Sign Up Page 1":
+            let userEmail = email.text ?? ""
+            ref.child("Users").queryEqual(toValue: userEmail)
+                .observe(.value, with: { snapshot in
+                    if (snapshot.hasChildren()) {
+                        self.emailLabel.text = "Email is already in use"
+                        //error = true
+                    } else {
+                        if(self.password.text! != self.confirmPassword.text!) {
+                            self.passwordLabel.text = "Passwords do not match!"
+                        } else {
+                            let vc = self.storyboard!.instantiateViewController(withIdentifier: "Sign Up Part 2")
+                            self.present(vc, animated: true, completion: nil)
+                        }
+                    }
+                })
+            
+            break
+        case "Sign Up Page 2":
+            var error = false
+            if(username.text! == "") {
+                signUpLabel.text = "Please enter a display name"
+                error = true
+            } else if (firstName.text! == "") {
+                fNLabel.text = "Please enter your first name"
+                error = true
+            } else if (lastName.text! == "") {
+                lNLabel.text = "Please enter your last name"
+                error = true
+            }
+            if(!error) {
+                let vc = self.storyboard!.instantiateViewController(withIdentifier: "Sign Up Part 3")
+                self.present(vc, animated: true, completion: nil)
+            }
+            break
+        case "Sign Up Page 3":
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "Sign Up Part 4")
+            self.present(vc, animated: true, completion: nil)
+            break
+        default:
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "Log In")
             self.present(vc, animated: true, completion: nil)
+            break
         }
-        spinner.stopAnimating()
-    }
-    
-    func saveData(userData: String, passData: String, emailIn: String, firstNameIn: String, lastNameIn: String, dOBIn: String, genderIn: String, cityIn: String, stateIn: String) {
-        module.push(values: [userData, passData, emailIn, firstNameIn, lastNameIn, dOBIn, genderIn, cityIn, stateIn], keys: ["username", "password", "email", "firstName", "lastName", "dOB", "gender", "city", "state"])
-    }
-    
-    func isValid() -> Bool {
-        var valid = true
-        if !(email.text?.range(of: "@") != nil && (email.text?.range(of: ".com") != nil || email.text?.range(of: ".org") != nil)) {
-            emailLabel.text = "Please enter proper email address!"
-            valid = false
-        }
-        if firstName.text == "" {
-            fNLabel.text = "Please enter a name!"
-            valid = false
-        }
-        if lastName.text == "" {
-            lNLabel.text = "Please enter a name!"
-            valid = false
-        }
-        //For date of birth, need to have it check if age is valid (18+)
-        if dOB.text == "" {
-            dOBLabel.text = "Please enter a date of birth!"
-            valid = false
-        } else { dOBLabel.text = "" }
-        if gender.text?.lowercased() == "male" || gender.text?.lowercased() == "female" {
-            genderLabel.text = ""
-            valid = true
-        } else {
-            genderLabel.text = "Please enter Male or Female"
-            valid = false
-        }
-        if city.text == "" {
-            cityLabel.text = "Please enter a City name!"
-            valid = false
-        } else { cityLabel.text = "" }
-        if state.text == "" {
-            stateLabel.text = "Please enter a State name!"
-            valid = false
-        } else { stateLabel.text = "" }
-        if !(email.text?.range(of: "@") != nil && (email.text?.range(of: ".com") != nil || email.text?.range(of: ".org") != nil)) {
-            emailLabel.text = "Please enter proper email address!"
-            valid = false
-        } else { emailLabel.text = "" }
-        for users in dataOfUsers {
-            let savedUser = users.value(forKey: "username") as! String
-            
-            if userName.text == savedUser {
-                signUpLabel.text = "Username already exists!"
-                valid = false
-                break
-            } else { signUpLabel.text = "" }
-        }
-        return valid
     }
 }
-
-// saveData(userData: userName.text!, passData: passWord.text!)
