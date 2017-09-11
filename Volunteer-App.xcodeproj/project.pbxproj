@@ -20,9 +20,6 @@
 		CFF6424E1F65FB2300923993 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF6424D1F65FB2300923993 /* SignUp.swift */; };
 		CFF642501F6613E700923993 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFF6424F1F6613E700923993 /* GoogleService-Info.plist */; };
 		CFF642521F66164200923993 /* SignUp+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF642511F66164200923993 /* SignUp+Extension.swift */; };
-		CFF642551F66250900923993 /* SignUp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF642541F66250900923993 /* SignUp2.swift */; };
-		CFF642571F66251700923993 /* SignUp3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF642561F66251700923993 /* SignUp3.swift */; };
-		CFF642591F66252400923993 /* SignUp4.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF642581F66252400923993 /* SignUp4.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +62,6 @@
 		CFF6424D1F65FB2300923993 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		CFF6424F1F6613E700923993 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFF642511F66164200923993 /* SignUp+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SignUp+Extension.swift"; sourceTree = "<group>"; };
-		CFF642541F66250900923993 /* SignUp2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp2.swift; sourceTree = "<group>"; };
-		CFF642561F66251700923993 /* SignUp3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp3.swift; sourceTree = "<group>"; };
-		CFF642581F66252400923993 /* SignUp4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp4.swift; sourceTree = "<group>"; };
 		D44C8C57BDC17D99B4301F77 /* Pods-Volunteer-AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volunteer-AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Volunteer-AppUITests/Pods-Volunteer-AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EA512B6A0B72F8A8CC7E9ED2 /* Pods-Volunteer-AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volunteer-AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Volunteer-AppTests/Pods-Volunteer-AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F929DC99970C0CBFA3713DD9 /* Pods_Volunteer_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Volunteer_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,9 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				CFF6424D1F65FB2300923993 /* SignUp.swift */,
-				CFF642541F66250900923993 /* SignUp2.swift */,
-				CFF642561F66251700923993 /* SignUp3.swift */,
-				CFF642581F66252400923993 /* SignUp4.swift */,
 				CFF642511F66164200923993 /* SignUp+Extension.swift */,
 			);
 			name = "Sign Up";
@@ -495,12 +486,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFF642221F65FAE300923993 /* ViewController.swift in Sources */,
-				CFF642571F66251700923993 /* SignUp3.swift in Sources */,
-				CFF642591F66252400923993 /* SignUp4.swift in Sources */,
 				CFF6424E1F65FB2300923993 /* SignUp.swift in Sources */,
 				CFF642201F65FAE300923993 /* AppDelegate.swift in Sources */,
 				CFF642521F66164200923993 /* SignUp+Extension.swift in Sources */,
-				CFF642551F66250900923993 /* SignUp2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
