@@ -10,116 +10,142 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import CoreLocation
 
-class SignUp: UIViewController {
+class SignUp: UIViewController, UITextFieldDelegate {
+    @IBOutlet var username: UITextField!
+    @IBOutlet var password: UITextField!
+    @IBOutlet var confirmPassword: UITextField!
+    @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var passwordLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        username.delegate = self
+        password.delegate = self
+        username.becomeFirstResponder()
         spinner.hidesWhenStopped = true
     }
     
-    private func ref() -> DatabaseReference {
-        return Database.database().reference()
-    }
+    var usersRef: DatabaseReference?
     
-    private func authRef() -> Auth {
-        return Auth.auth()
-    }
+    var userName: String!
+    var userpassword: String!
     
-    @IBOutlet var email: UITextField!
-    @IBOutlet var password: UITextField!
-    @IBOutlet var confirmPassword: UITextField!
-    @IBOutlet var emailLabel: UILabel!
-    @IBOutlet var passwordLabel: UILabel!
+    var error: Bool!
     
     @IBOutlet var spinner: UIActivityIndicatorView!
     
-    func checkEmail() {
-        let userEmail = email.text ?? ""
-        ref().child("Users").queryEqual(toValue: userEmail)
-            .observe(.value, with: { snapshot in
-                if (snapshot.hasChildren()) {
-                    self.emailLabel.text = "Email is already in use"
-                } else {
-                    
-                }
-            })
+    @IBAction func nextPage() {
+        usernameLabel.text = ""
+        spinner.startAnimating()
+        checkUsername()
+        spinner.stopAnimating()
     }
     
-    func checkPassword() {
-        if(self.password.text! != self.confirmPassword.text!) {
-            self.passwordLabel.text = "Passwords do not match!"
-        } else {
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: "Sign Up Part 2")
-            self.present(vc, animated: true, completion: nil)
-        }
+    //Retrieves password (for account creation in Review class)
+    func getPassword() -> String {
+        return userpassword
+    }
+    
+    //Retrieves email (for account creation in Review class)
+    func getUsername() -> String{
+        return userName
     }
 }
 
-class SignUp2: UIViewController {
+class SignUp2: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.hidesWhenStopped = true
     }
     
-    @IBOutlet var username: UITextField!
+    var usernameR: String?
+    var passwordR: String?
+    
+    @IBOutlet var email: UITextField!
     @IBOutlet var firstName: UITextField!
     @IBOutlet var lastName: UITextField!
     
     @IBOutlet var spinner: UIActivityIndicatorView!
     
-    @IBOutlet var signUpLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
     @IBOutlet var fNLabel: UILabel!
     @IBOutlet var lNLabel: UILabel!
     
-    func checkInfo() {
-        var error = false
-        if(username.text! == "") {
-            signUpLabel.text = "Please enter a display name"
-            error = true
-        } else if (firstName.text! == "") {
-            fNLabel.text = "Please enter your first name"
-            error = true
-        } else if (lastName.text! == "") {
-            lNLabel.text = "Please enter your last name"
-            error = true
-        }
-        if(!error) {
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: "Sign Up Part 3")
-            self.present(vc, animated: true, completion: nil)
-        }
+    @IBAction func nextPage() {
+        spinner.startAnimating()
+        checkInfo()
+        spinner.stopAnimating()
     }
-    
 }
 
-class SignUp3:UIViewController {
+class SignUp3:UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.hidesWhenStopped = true
     }
+    
+    var usernameR: String?
+    var passwordR: String?
+    var emailR: String?
+    var fnR: String?
+    var lnR: String?
     
     @IBOutlet var dOB: UITextField!
     
     @IBOutlet var spinner: UIActivityIndicatorView!
     
     @IBOutlet var dOBLabel: UILabel!
+    
+    @IBAction func nextPage() {
+        spinner.startAnimating()
+        checkAge()
+        spinner.stopAnimating()
+    }
 }
 
-class SignUp4: UIViewController {
+class SignUp4: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        zipcode.becomeFirstResponder()
         spinner.hidesWhenStopped = true
     }
     
-    @IBOutlet var city: UITextField!
-    @IBOutlet var state: UITextField!
+    var usernameR: String?
+    var passwordR: String?
+    var emailR: String?
+    var fnR: String?
+    var lnR: String?
+    var dOBR: String?
+    
+    var city: String!
+    var state: String!
+    
+    let locationManager = CLLocationManager()
+    
+    @IBOutlet var zipcode: UITextField!
     
     @IBOutlet var spinner: UIActivityIndicatorView!
     
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet var stateLabel: UILabel!
+    @IBOutlet var zipLabel: UILabel!
+    
+    @IBAction func trackLocation() {
+        
+    }
+    
+    @IBAction func nextPage() {
+        spinner.startAnimating()
+        checkLocation()
+        spinner.stopAnimating()
+    }
 }
 
-class Review: UIViewController {
+class Review: UIViewController, UITextFieldDelegate {
     private func ref() -> DatabaseReference {
         return Database.database().reference()
     }
@@ -128,40 +154,45 @@ class Review: UIViewController {
         return Auth.auth()
     }
     
+    
+    @IBOutlet var spinner: UIActivityIndicatorView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.email.text = emailR
+        self.username.text = usernameR
+        self.firstName.text = fnR
+        self.lastName.text = lnR
+        self.dOB.text = dOBR
+        self.zipcode.text = zipR
+        spinner.hidesWhenStopped = true
+    }
+    
     @IBOutlet var email: UITextField!
-    @IBOutlet var password: UITextField!
     @IBOutlet var username: UITextField!
     @IBOutlet var firstName: UITextField!
     @IBOutlet var lastName: UITextField!
     @IBOutlet var dOB: UITextField!
-    @IBOutlet var city: UITextField!
-    @IBOutlet var state: UITextField!
+    @IBOutlet var zipcode: UITextField!
     
+    @IBOutlet var emailLabel: UILabel!
+    @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var fnLabel: UILabel!
+    @IBOutlet var lnLabel: UILabel!
+    @IBOutlet var dobLabel: UILabel!
+    @IBOutlet var zipLabel: UILabel!
     
-    func createUser () {
-        authRef().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
-            let userid = user?.uid
-            let errorMsg = error!.localizedDescription
-            if(errorMsg == "") {
-                let values = ["email": self.email.text!, "password": self.password.text!]
-                self.saveUserInfo(values: values, uid: userid!)
-                self.ref().child("User Profile").child(userid!).setValue([
-                    "username": self.username.text!,
-                    "name": self.firstName.text! + self.lastName.text!,
-                    "dOB": self.dOB.text!,
-                    "location": self.city.text! + self.state.text!])
-            }
-        }
-    }
+    var usernameR: String?
+    var passwordR: String?
+    var emailR: String?
+    var fnR: String?
+    var lnR: String?
+    var dOBR: String?
+    var zipR: String?
     
-    func saveUserInfo (values: [String: String], uid: String) {
-        ref().child("Users").child(uid).setValue(values) { (error, ref) in
-            if(error != nil) {
-                let ac = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                ac.addAction(cancel)
-                self.present(ac, animated: true, completion: nil)
-            }
-        }
+    @IBAction func finishSignUp() {
+        spinner.startAnimating()
+        createUser()
+        spinner.stopAnimating()
     }
 }
