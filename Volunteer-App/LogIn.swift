@@ -11,6 +11,6 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class Login: UIViewController {
+class LogIn: UIViewController {
     
 }
